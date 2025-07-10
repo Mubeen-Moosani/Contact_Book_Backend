@@ -1,5 +1,6 @@
 // api/index.js
-import app from "../app";
-import { createServerlessExpressHandler } from "@vendia/serverless-express";
+import app from "../app.js";
+import serverlessExpress from "@vendia/serverless-express";
+// const { createServerlessExpressHandler } = serverlessExpress;
 
-export default createServerlessExpressHandler(app);
+export default serverlessExpress({ app });
