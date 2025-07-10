@@ -6,7 +6,6 @@ import app from "../app.js";
 // export default serverlessExpress({ app });
 export default async (req, res) => {
   try {
-    await Connect(); // Reconnect on each request (serverless cold start)
     return app(req, res);
   } catch (err) {
     console.error("Serverless error:", err);
