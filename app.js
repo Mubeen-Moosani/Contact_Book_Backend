@@ -97,4 +97,9 @@ mongoose.connection.on("error", (err) =>
   console.log("MongoDB connection error:", err)
 );
 
+// Error handling middleware (must be last!)
+app.use((err, req, res, next) => {
+  console.error("Server Error:", err.stack);
+  res.status(500).json({ error: "Internal Server Error" });
+});
 export default app;
